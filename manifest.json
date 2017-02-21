@@ -1,0 +1,17 @@
+{
+	"author": "Leandro Panegassi <leandropanegassi89@gmail.com>",
+	"background": {
+		"scripts": ["js/main.js", "js/spreadsheet.js", "js/plugin.js"]
+	},
+	"browser_action": {
+		"default_icon": "images/icon.png"
+	},
+	"description": "Validation of the spreadsheet of data sent to Google Analytics via Browser Networking.",
+	"manifest_version": 2,
+	"name": "GoogleAnalyticsValidationSpreadSheetTagPlanningNetworking",
+	"permissions": [
+		"webRequest",
+		"*://*.google-analytics.com/"
+	],
+	"version": "1.0"
+}
