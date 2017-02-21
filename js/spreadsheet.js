@@ -1,1 +1,0 @@
-var SPREADSHEET_ID = '';
