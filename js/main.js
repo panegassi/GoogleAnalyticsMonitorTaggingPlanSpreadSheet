@@ -1,12 +1,25 @@
-chrome.webRequest.onBeforeRequest.addListener(function(request) {
+var MSG_ERRORS = [];
+
+
+chrome.webRequest.onCompleted.addListener(function(request) {
 
 	if (isURLRequestGA(request.url)) {
 		
-		var hit = hitType(request.url);
-		if (isPageview(hit)) {
-			console.log(hit);
+		var url = request.url,
+			hit = hitType(url);
+
+		// @todo Verificar se as informações batem com as do spreadsheet e atualizar a data.			
+		if (isEvent(hit)) {
+			console.log(eventTemplate(url));	
+		} else if (isException(hit)) {
+			
+		} else if (isPageview(hit)) {
+			console.log(pageviewTemplate(url));
+		} else if (isSocial(hit)) {
+
 		} else {
-			console.log(hit);
+			// timing
+			
 		} // HIT_TYPE
 		
 	} // isURLRequestGA
